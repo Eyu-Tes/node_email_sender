@@ -11,7 +11,7 @@ body {
     font-family: var(--font-primary);
 }
 
-a, input, button, select {
+a, input, button, select, textarea {
     box-shadow: none !important;
     outline: none !important;
 }
