@@ -21,6 +21,10 @@ app.engine('.hbs', exphbs({
 }))
 app.set('view engine', '.hbs')
 
+// body parser
+app.use(express.urlencoded({extended: false}))
+app.use(express.json())
+
 // load router
 app.use('/', router)
 

@@ -1,10 +1,12 @@
 const express = require('express')
 
-const {showSendEmail} = require('../controllers/index')
+const {showSendEmail, sendEmail} = require('../controllers/index')
 
 const router = express.Router()
 
-// @route   GET /
-router.get('/', showSendEmail)
+// @route   /
+router.route('/')
+.get(showSendEmail)    // GET
+.post(sendEmail)       // POSt
 
 module.exports = router
