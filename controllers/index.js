@@ -30,9 +30,11 @@ module.exports.sendEmail = async (req, res) => {
         // send email
         let info = await transporter.sendMail(mailOptions)
         console.log(`Email Sent. \t ${info.response}`, )
+        req.flash('success_msg', "Email Successfully Sent!")
         res.redirect('/')
     } catch (error) {
         console.log(error)
+        req.flash('error_msg', "Email Not Sent!")
         res.redirect('/')
     }
 }
